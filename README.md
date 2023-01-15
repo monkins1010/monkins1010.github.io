@@ -19,7 +19,7 @@ TODO add Motoko code piece
 const msg = "hello, world";
 ```
 +++ Rust
-TODO add Rust code snippet
+TODO add Rust code snippet more
 
 ```js # Rust Snippet
 const msg = "hello, world";
