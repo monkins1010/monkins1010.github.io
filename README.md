@@ -13,7 +13,7 @@ const msg = "hello, world";
 ## Tabbed Code Blocks
 
 +++ Motoko
-TODO add Motoko code snippet
+TODO add Motoko code piece
 
 ```js # Motoko Snippet
 const msg = "hello, world";
