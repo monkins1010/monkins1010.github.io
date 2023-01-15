@@ -1,0 +1,39 @@
+input: .
+output: .retype
+url: https://aariman.github.io/RetypeDocExample/
+
+branding:
+  title: IC Documenation
+  label: Docs
+
+links:
+  - text: Home
+    link: /README.md
+    icon: home
+
+  - text: Issues
+    link: https://github.com/aariman/RetypeDocExample/issues
+    icon: issue-opened
+    target: blank
+
+  - text: GitHub
+    link: https://github.com/aariman/RetypeDocExample
+    icon: mark-github
+    target: blank
+
+  - text: Wiki
+    link: https://wiki.internetcomputer.org/
+    icon: globe
+    target: blank
+
+  - text: Medium
+    link: https://medium.com/dfinity
+    icon: globe
+    target: blank
+
+edit:
+  repo: https://github.com/aariman/RetypeDocExample
+  label: Edit on GitHub
+
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
