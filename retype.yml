@@ -22,12 +22,12 @@ links:
     target: blank
 
   - text: Wiki
-    link: https://wiki.internetcomputer.org/
+    link: https://wiki.verus.io/#!index.md
     icon: globe
     target: blank
 
   - text: Medium
-    link: https://medium.com/dfinity
+    link: https://medium.com/veruscoin
     icon: globe
     target: blank
 
