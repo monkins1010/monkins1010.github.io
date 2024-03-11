@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-11T14:20:55Z",
+  "created": "2024-03-11T14:48:47Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,7 +9,8 @@
       "path": "404.html"
     },
     {
-      "path": "categories\\concepts\\index.html"
+      "path": "categories\\concepts\\index.html",
+      "old": true
     },
     {
       "path": "categories\\index.html"
@@ -18,22 +19,124 @@
       "path": "categories\\tutorials\\index.html"
     },
     {
-      "path": "concepts\\cycles\\index.html"
+      "path": "concepts\\cycles\\index.html",
+      "old": true
     },
     {
-      "path": "concepts\\index.html"
+      "path": "concepts\\index.html",
+      "old": true
     },
     {
-      "path": "concepts\\svelte-concept\\index.html"
+      "path": "concepts\\svelte-concept\\index.html",
+      "old": true
     },
     {
-      "path": "developerdocs\\getting-started\\index.html"
+      "path": "developerdocs\\getting-started\\index.html",
+      "old": true
     },
     {
-      "path": "developerdocs\\index.html"
+      "path": "developerdocs\\index.html",
+      "old": true
     },
     {
-      "path": "developerdocs\\svelte-tutorial\\index.html"
+      "path": "developerdocs\\svelte-tutorial\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\404.html"
+    },
+    {
+      "path": "docs\\categories\\concepts\\index.html"
+    },
+    {
+      "path": "docs\\categories\\index.html"
+    },
+    {
+      "path": "docs\\categories\\tutorials\\index.html"
+    },
+    {
+      "path": "docs\\concepts\\cycles\\index.html"
+    },
+    {
+      "path": "docs\\concepts\\index.html"
+    },
+    {
+      "path": "docs\\concepts\\svelte-concept\\index.html"
+    },
+    {
+      "path": "docs\\developerdocs\\getting-started\\index.html"
+    },
+    {
+      "path": "docs\\developerdocs\\index.html"
+    },
+    {
+      "path": "docs\\developerdocs\\svelte-tutorial\\index.html"
+    },
+    {
+      "path": "docs\\index.html"
+    },
+    {
+      "path": "docs\\resources\\css\\retype.css"
+    },
+    {
+      "path": "docs\\resources\\fonts\\inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "docs\\resources\\fonts\\inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "docs\\resources\\js\\config.js"
+    },
+    {
+      "path": "docs\\resources\\js\\lunr.js"
+    },
+    {
+      "path": "docs\\resources\\js\\retype.js"
+    },
+    {
+      "path": "docs\\resources\\js\\search.json"
+    },
+    {
+      "path": "docs\\resources\\lunr.js.license.txt"
+    },
+    {
+      "path": "docs\\resources\\mermaid.js.license.txt"
+    },
+    {
+      "path": "docs\\resources\\prism.js.license.txt"
+    },
+    {
+      "path": "docs\\resources\\retype.js.license.txt"
+    },
+    {
+      "path": "docs\\resources\\retype.license.txt"
+    },
+    {
+      "path": "docs\\robots.txt"
+    },
+    {
+      "path": "docs\\tags\\basics\\index.html"
+    },
+    {
+      "path": "docs\\tags\\canister\\index.html"
+    },
+    {
+      "path": "docs\\tags\\frontend\\index.html"
+    },
+    {
+      "path": "docs\\tags\\general\\index.html"
+    },
+    {
+      "path": "docs\\tags\\index.html"
+    },
+    {
+      "path": "docs\\tags\\svelte\\index.html"
+    },
+    {
+      "path": "docs\\verusid\\getting-started\\index.html"
+    },
+    {
+      "path": "docs\\verusid\\index.html"
     },
     {
       "path": "index.html"
@@ -81,13 +184,16 @@
       "path": "sitemap.xml.gz"
     },
     {
-      "path": "tags\\basics\\index.html"
+      "path": "tags\\basics\\index.html",
+      "old": true
     },
     {
-      "path": "tags\\canister\\index.html"
+      "path": "tags\\canister\\index.html",
+      "old": true
     },
     {
-      "path": "tags\\frontend\\index.html"
+      "path": "tags\\frontend\\index.html",
+      "old": true
     },
     {
       "path": "tags\\general\\index.html"
@@ -96,13 +202,38 @@
       "path": "tags\\index.html"
     },
     {
-      "path": "tags\\svelte\\index.html"
+      "path": "tags\\svelte\\index.html",
+      "old": true
+    },
+    {
+      "path": "veruscurrencies\\getting-started\\index.html"
+    },
+    {
+      "path": "veruscurrencies\\index.html"
     },
     {
       "path": "verusid\\getting-started\\index.html"
     },
     {
       "path": "verusid\\index.html"
+    },
+    {
+      "path": "veruslogin\\getting-started\\index.html"
+    },
+    {
+      "path": "veruslogin\\index.html"
+    },
+    {
+      "path": "verusnft\\getting-started\\index.html"
+    },
+    {
+      "path": "verusnft\\index.html"
+    },
+    {
+      "path": "verusstorage\\getting-started\\index.html"
+    },
+    {
+      "path": "verusstorage\\index.html"
     }
   ]
 }

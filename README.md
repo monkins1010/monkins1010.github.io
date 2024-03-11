@@ -2,11 +2,9 @@
 icon: home
 label: Welcome
 ---
-# Verus Developer Documentation
-
-### Document overview
-
+# Welcome
 ---
+Get started with Verus development.
 
 [!ref target="blank" text="Get the Verus Wallet"](https://verus.io/wallet)
 
@@ -24,5 +22,21 @@ Use Verus VDXF to attach data to a VerusID.
 ||| Launch a Token :heavy_dollar_sign:
 
 Use a VerusID to launch a token
+
+|||
+
+---
+icon: rocket
+||| Using chain Storage :file_folder:
+
+Store data on the Verus Chain.
+
+||| VDXF :key:
+
+Create unique keys from your namespace, to organise data.
+
+||| Testnet setup :test_tube:
+
+Download Verus node and sync to the testnet.
 
 |||
