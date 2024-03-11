@@ -33,7 +33,7 @@ links:
 
   - text: Verus Website
     link: https://verus.io
-    icon: verus-icon-white.svg
+    icon: /verus-icon-white.svg
     target: blank
 
 edit:
