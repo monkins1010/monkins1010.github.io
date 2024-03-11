@@ -1,0 +1,108 @@
+{
+  "version": "3.5.0",
+  "created": "2024-03-11T14:20:55Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "categories\\concepts\\index.html"
+    },
+    {
+      "path": "categories\\index.html"
+    },
+    {
+      "path": "categories\\tutorials\\index.html"
+    },
+    {
+      "path": "concepts\\cycles\\index.html"
+    },
+    {
+      "path": "concepts\\index.html"
+    },
+    {
+      "path": "concepts\\svelte-concept\\index.html"
+    },
+    {
+      "path": "developerdocs\\getting-started\\index.html"
+    },
+    {
+      "path": "developerdocs\\index.html"
+    },
+    {
+      "path": "developerdocs\\svelte-tutorial\\index.html"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "resources\\css\\retype.css"
+    },
+    {
+      "path": "resources\\fonts\\Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources\\fonts\\Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources\\js\\config.js"
+    },
+    {
+      "path": "resources\\js\\lunr.js"
+    },
+    {
+      "path": "resources\\js\\retype.js"
+    },
+    {
+      "path": "resources\\js\\search.json"
+    },
+    {
+      "path": "resources\\lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "tags\\basics\\index.html"
+    },
+    {
+      "path": "tags\\canister\\index.html"
+    },
+    {
+      "path": "tags\\frontend\\index.html"
+    },
+    {
+      "path": "tags\\general\\index.html"
+    },
+    {
+      "path": "tags\\index.html"
+    },
+    {
+      "path": "tags\\svelte\\index.html"
+    },
+    {
+      "path": "verusid\\getting-started\\index.html"
+    },
+    {
+      "path": "verusid\\index.html"
+    }
+  ]
+}

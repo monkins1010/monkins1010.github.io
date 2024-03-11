@@ -1,6 +1,6 @@
 input: .
 output: .retype
-url: https://aariman.github.io/RetypeDocExample/
+url: https://monkins1010.github.io/
 
 branding:
   title: Verus Developer
@@ -12,12 +12,12 @@ links:
     icon: home
 
   - text: Issues
-    link: https://github.com/aariman/RetypeDocExample/issues
+    link: https://github.com/monkins1010/monkins1010.github.io/issues
     icon: issue-opened
     target: blank
 
   - text: GitHub
-    link: https://github.com/aariman/RetypeDocExample
+    link: https://github.com/monkins1010/monkins1010.github.io
     icon: mark-github
     target: blank
 
@@ -32,7 +32,7 @@ links:
     target: blank
 
 edit:
-  repo: https://github.com/aariman/RetypeDocExample
+  repo: https://github.com/monkins1010/monkins1010.github.io
   label: Edit on GitHub
 
 footer:

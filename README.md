@@ -2,49 +2,27 @@
 icon: home
 label: Welcome
 ---
-# Doc Testing Page
+# Verus Developer Documentation
 
-## Code Blocks
+### Document overview
 
-```js # JavaScript Snippet
-const msg = "hello, world";
-```
+---
 
-## Tabbed Code Blocks
+[!ref target="blank" text="Get the Verus Wallet"](https://verus.io/wallet)
 
-+++ Motoko
-TODO add Motoko code piece
 
-```js # Motoko Snippet
-const msg = "hello, world";
-```
-+++ Rust
-TODO add Rust code snippet more
+[!ref target="blank" text="Create your own self sovereign Identity."](https://docs.verus.io/verusid/verusid-create.html)
 
-```js # Rust Snippet
-const msg = "hello, world";
-```
-+++
+||| Login with VerusID :technologist: 
 
-## Maths
-=== A fancy math panel
-$$
-\displaystyle {e = mc^2}
-$$
-===
+Create a QR Code, display it to a user, login to your service.
 
-## Diagrams
+||| Create a NFT :unicorn_face:
 
-```mermaid
-erDiagram
-    IDENTITY ||--|| PRINCIPAL : contains
-    PRINCIPAL ||--|{ ACCOUNT : contains
-```
+Use Verus VDXF to attach data to a VerusID.
 
-## Embed Content
+||| Launch a Token :heavy_dollar_sign:
 
-### Videos
-[!embed](https://www.youtube.com/watch?v=xiupEw4MfxY)
+Use a VerusID to launch a token
 
-### Other Content
-[!embed height="800"](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/)
+|||
