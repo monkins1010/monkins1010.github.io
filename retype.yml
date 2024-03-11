@@ -3,7 +3,7 @@ output: .retype
 url: https://aariman.github.io/RetypeDocExample/
 
 branding:
-  title: IC Documenation
+  title: Verus Developer
   label: Docs
 
 links:
