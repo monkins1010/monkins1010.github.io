@@ -10,7 +10,7 @@ Get started with Verus development.
 
 [!ref target="blank" text="Create your own self sovereign Identity."](https://docs.verus.io/verusid/verusid-create.html)
 
-|||  [Login with VerusID](/VerusID/index.md) :technologist:  
+|||  [Login with VerusID](/VerusLogin/index.md) :technologist:  
 
 Create a QR Code, display it to a user, login to your service.
 

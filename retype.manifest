@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-11T15:21:26Z",
+  "created": "2024-03-11T22:25:56Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -189,6 +189,9 @@
       "path": "resources\\js\\lunr.js"
     },
     {
+      "path": "resources\\js\\prism.js"
+    },
+    {
       "path": "resources\\js\\retype.js"
     },
     {
@@ -238,6 +241,12 @@
       "old": true
     },
     {
+      "path": "tags\\verusid-login\\index.html"
+    },
+    {
+      "path": "verus-icon-white.svg"
+    },
+    {
       "path": "veruscurrencies\\getting-started\\index.html"
     },
     {
@@ -254,6 +263,15 @@
     },
     {
       "path": "veruslogin\\index.html"
+    },
+    {
+      "path": "veruslogin\\process-login\\index.html"
+    },
+    {
+      "path": "veruslogin\\server-login\\index.html"
+    },
+    {
+      "path": "veruslogin\\validate-login\\index.html"
     },
     {
       "path": "verusnft\\getting-started\\index.html"
