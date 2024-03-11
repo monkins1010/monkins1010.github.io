@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-11T14:48:47Z",
+  "created": "2024-03-11T14:55:27Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -43,100 +43,132 @@
       "old": true
     },
     {
-      "path": "docs\\404.html"
+      "path": "docs\\404.html",
+      "old": true
     },
     {
-      "path": "docs\\categories\\concepts\\index.html"
+      "path": "docs\\categories\\concepts\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\categories\\index.html"
+      "path": "docs\\categories\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\categories\\tutorials\\index.html"
+      "path": "docs\\categories\\tutorials\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\concepts\\cycles\\index.html"
+      "path": "docs\\concepts\\cycles\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\concepts\\index.html"
+      "path": "docs\\concepts\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\concepts\\svelte-concept\\index.html"
+      "path": "docs\\concepts\\svelte-concept\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\developerdocs\\getting-started\\index.html"
+      "path": "docs\\developerdocs\\getting-started\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\developerdocs\\index.html"
+      "path": "docs\\developerdocs\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\developerdocs\\svelte-tutorial\\index.html"
+      "path": "docs\\developerdocs\\svelte-tutorial\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\index.html"
+      "path": "docs\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\resources\\css\\retype.css"
+      "path": "docs\\resources\\css\\retype.css",
+      "old": true
     },
     {
-      "path": "docs\\resources\\fonts\\inter-italic-latin-var.woff2"
+      "path": "docs\\resources\\fonts\\inter-italic-latin-var.woff2",
+      "old": true
     },
     {
-      "path": "docs\\resources\\fonts\\inter-roman-latin-var.woff2"
+      "path": "docs\\resources\\fonts\\inter-roman-latin-var.woff2",
+      "old": true
     },
     {
-      "path": "docs\\resources\\js\\config.js"
+      "path": "docs\\resources\\js\\config.js",
+      "old": true
     },
     {
-      "path": "docs\\resources\\js\\lunr.js"
+      "path": "docs\\resources\\js\\lunr.js",
+      "old": true
     },
     {
-      "path": "docs\\resources\\js\\retype.js"
+      "path": "docs\\resources\\js\\retype.js",
+      "old": true
     },
     {
-      "path": "docs\\resources\\js\\search.json"
+      "path": "docs\\resources\\js\\search.json",
+      "old": true
     },
     {
-      "path": "docs\\resources\\lunr.js.license.txt"
+      "path": "docs\\resources\\lunr.js.license.txt",
+      "old": true
     },
     {
-      "path": "docs\\resources\\mermaid.js.license.txt"
+      "path": "docs\\resources\\mermaid.js.license.txt",
+      "old": true
     },
     {
-      "path": "docs\\resources\\prism.js.license.txt"
+      "path": "docs\\resources\\prism.js.license.txt",
+      "old": true
     },
     {
-      "path": "docs\\resources\\retype.js.license.txt"
+      "path": "docs\\resources\\retype.js.license.txt",
+      "old": true
     },
     {
-      "path": "docs\\resources\\retype.license.txt"
+      "path": "docs\\resources\\retype.license.txt",
+      "old": true
     },
     {
-      "path": "docs\\robots.txt"
+      "path": "docs\\robots.txt",
+      "old": true
     },
     {
-      "path": "docs\\tags\\basics\\index.html"
+      "path": "docs\\tags\\basics\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\tags\\canister\\index.html"
+      "path": "docs\\tags\\canister\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\tags\\frontend\\index.html"
+      "path": "docs\\tags\\frontend\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\tags\\general\\index.html"
+      "path": "docs\\tags\\general\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\tags\\index.html"
+      "path": "docs\\tags\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\tags\\svelte\\index.html"
+      "path": "docs\\tags\\svelte\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\verusid\\getting-started\\index.html"
+      "path": "docs\\verusid\\getting-started\\index.html",
+      "old": true
     },
     {
-      "path": "docs\\verusid\\index.html"
+      "path": "docs\\verusid\\index.html",
+      "old": true
     },
     {
       "path": "index.html"

@@ -26,7 +26,7 @@ Use a VerusID to launch a token
 |||
 
 ---
-icon: rocket
+
 ||| Using chain Storage :file_folder:
 
 Store data on the Verus Chain.
