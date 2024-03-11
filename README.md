@@ -8,34 +8,33 @@ Get started with Verus development.
 
 [!ref target="blank" text="Get the Verus Wallet"](https://verus.io/wallet)
 
-
 [!ref target="blank" text="Create your own self sovereign Identity."](https://docs.verus.io/verusid/verusid-create.html)
 
-||| Login with VerusID :technologist: 
+|||  [Login with VerusID](/VerusID/index.md) :technologist:  
 
 Create a QR Code, display it to a user, login to your service.
 
-||| Create a NFT :unicorn_face:
+||| [Create an NFT](/VerusNft/index.md) :unicorn_face:
 
-Use Verus VDXF to attach data to a VerusID.
+Use Verus VDXF to attach data to a VerusID. 
 
-||| Launch a Token :heavy_dollar_sign:
+||| [Currencies](/VerusCurrencies/index.md) :heavy_dollar_sign:
 
-Use a VerusID to launch a token
+Use a VerusID to launch a token.
 
 |||
 
 ---
 
-||| Using chain Storage :file_folder:
+||| [Storage](/VerusStorage/index.md) :file_folder:
 
-Store data on the Verus Chain.
+Store data on the Verus Chain. 
 
-||| VDXF :key:
+||| [VDXF](/VerusVdxf/index.md) :key:
 
-Create unique keys from your namespace, to organise data.
+Create unique keys from your namespace, to organise data. 
 
-||| Testnet setup :test_tube:
+||| [Testnet setup](/VerusTestnet/index.md) :test_tube:
 
 Download Verus node and sync to the testnet.
 
