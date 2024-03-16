@@ -24,10 +24,6 @@ Please use this page to raise issues, put changelogs for each section of the sit
 
 - [ ] TBA - Create initial guide
 
-#### Creating Currencies
-
-- [ ] TBA - Create initial guide
-
 #### Verus Chain Storage
 
 - [ ] TBA - Create initial guide
@@ -39,3 +35,8 @@ Please use this page to raise issues, put changelogs for each section of the sit
 #### Verus Testnet
 
 - [ ] TBA - Create initial guide
+
+#### Bounty Section
+
+- [x] 2024/03/16 - Created Section.
+- [x] 2024/03/16 - Added Solana bounty.

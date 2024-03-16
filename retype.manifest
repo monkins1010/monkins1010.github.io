@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-12T21:33:16Z",
+  "created": "2024-03-16T14:35:26Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -15,6 +15,12 @@
       "path": "attestations\\index.html"
     },
     {
+      "path": "bishop.png"
+    },
+    {
+      "path": "categories\\bounties\\index.html"
+    },
+    {
       "path": "categories\\concepts\\index.html",
       "old": true
     },
@@ -23,6 +29,15 @@
     },
     {
       "path": "categories\\tutorials\\index.html"
+    },
+    {
+      "path": "communityfeedback\\bounties\\documents\\index.html"
+    },
+    {
+      "path": "communityfeedback\\bounties\\index.html"
+    },
+    {
+      "path": "communityfeedback\\bounties\\solana\\index.html"
     },
     {
       "path": "communityfeedback\\index.html"
@@ -50,6 +65,9 @@
     {
       "path": "developerdocs\\svelte-tutorial\\index.html",
       "old": true
+    },
+    {
+      "path": "discord-icon.svg"
     },
     {
       "path": "docs\\404.html",
@@ -198,6 +216,9 @@
       "path": "resources\\js\\lunr.js"
     },
     {
+      "path": "resources\\js\\mermaid.js"
+    },
+    {
       "path": "resources\\js\\prism.js"
     },
     {
@@ -226,6 +247,9 @@
     },
     {
       "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "solana-sol-logo.svg"
     },
     {
       "path": "tags\\basics\\index.html",

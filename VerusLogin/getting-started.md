@@ -16,7 +16,8 @@ The verusid-ts-client is installed using [`yarn`](https://classic.yarnpkg.com/en
 | Package Manager | Supported Platforms |
 | --- | --- |
 | [`yarn`](https://classic.yarnpkg.com/en/docs/install/) | [!badge text="Mac" variant="light"] [!badge text="Win" variant="primary"] [!badge text="Linux" variant="dark"]
-
+!!!danger Only yarn is supported at the moment
+!!!
 ---
 
 ## Install
