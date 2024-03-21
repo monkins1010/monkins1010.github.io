@@ -8,8 +8,10 @@ icon: file
 
 # Defi and coin aggregator platforms progress
 
-Verus's Voluke is reported in teh $1,000s per day, but looking at
+Verus's Volume is reported in the $1,000s per day, but looking at
 https://cryptodashboard.faldt.net/ we can see its up in the Millions of $.
+
+Below is a status of current efforts to change this and the places approached.
 
 
 Name   | Progress | Todo  |  User
