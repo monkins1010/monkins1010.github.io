@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-16T14:46:43Z",
+  "created": "2024-03-21T15:22:17Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -31,13 +31,22 @@
       "path": "categories\\tutorials\\index.html"
     },
     {
+      "path": "communityfeedback\\aggregators\\index.html"
+    },
+    {
       "path": "communityfeedback\\bounties\\documents\\index.html"
     },
     {
       "path": "communityfeedback\\bounties\\index.html"
     },
     {
+      "path": "communityfeedback\\bounties\\nftviewer\\index.html"
+    },
+    {
       "path": "communityfeedback\\bounties\\solana\\index.html"
+    },
+    {
+      "path": "communityfeedback\\dapps\\index.html"
     },
     {
       "path": "communityfeedback\\index.html"

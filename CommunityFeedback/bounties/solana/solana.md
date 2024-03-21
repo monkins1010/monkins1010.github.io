@@ -68,7 +68,7 @@ graph LR
 #### Milestones
 MVP 1
 :   Define What needs to be built
-    - In the Daemon
+    - In the Daemon (How to solve the EDCSA Issue)
     - Define and choose programming language to be used for each module
     - Smart Contracts
     - Apps
