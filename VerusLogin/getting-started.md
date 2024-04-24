@@ -39,4 +39,4 @@ import { AxiosRequestConfig } from 'axios';
 const config: AxiosRequestConfig = {/* Axios configuration */};
 const verusIdClient = new VerusIdInterface('root-system-currency-id', 'http://your-verusd-node.com', config);
 ```
-This will allow the `verusid-ts-client` to connect to the verus blockchain.  You can connect it directly to a node that you hose or to w web hosted API endpoint e.g. `https://api.verus.services`
+This will allow the `verusid-ts-client` to connect to the verus blockchain.  You can connect it directly to a node that you host or to web hosted API endpoint e.g. `https://api.verus.services`
