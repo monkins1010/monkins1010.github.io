@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-03-21T15:24:49Z",
+  "created": "2024-04-26T06:14:09Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -281,6 +281,9 @@
     {
       "path": "tags\\svelte\\index.html",
       "old": true
+    },
+    {
+      "path": "tags\\vdxf\\index.html"
     },
     {
       "path": "tags\\verusid-login\\index.html"
