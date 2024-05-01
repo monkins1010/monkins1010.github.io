@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-04-26T06:14:09Z",
+  "created": "2024-05-01T15:16:48Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -335,6 +335,9 @@
     },
     {
       "path": "verustestnet\\index.html"
+    },
+    {
+      "path": "verusvdxf\\getting-started-copy\\index.html"
     },
     {
       "path": "verusvdxf\\getting-started\\index.html"

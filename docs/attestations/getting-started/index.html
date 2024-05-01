@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767427248303">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767891807322">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Getting Started</title>
     <meta name="title" content="Getting Started">
-    <meta name="description" content="Fancy getting started guide...">
+    <meta name="description" content="Attestations on Verus are very easy as all the signing and creation of the objects is handled by the daemon.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://monkins1010.github.io/attestations/getting-started/">
@@ -20,21 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://monkins1010.github.io/attestations/getting-started/">
     <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Fancy getting started guide...">
+    <meta property="og:description" content="Attestations on Verus are very easy as all the signing and creation of the objects is handled by the daemon.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://monkins1010.github.io/attestations/getting-started/">
     <meta property="twitter:title" content="Getting Started">
-    <meta property="twitter:description" content="Fancy getting started guide...">
+    <meta property="twitter:description" content="Attestations on Verus are very easy as all the signing and creation of the objects is handled by the daemon.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767427248303" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767891807322" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767427248303" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767891807322" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767427248303" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767891807322" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767891807322" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -280,7 +281,208 @@
     <div><a href="../../categories/tutorials/">Tutorials</a></div>
 </div>
 
-<p>Fancy getting started guide...</p>
+<p>Attestations on Verus are very easy as all the signing and creation of the objects is handled by the daemon.  The daemon understands how to make a data structure that combines all the values you wish to include in the attestation and put it into a MMR that can be zero knowledge, encyrpted, signed and stored.  Here is an example of a simple proo that could be created for a user.</p>
+<doc-anchor-target id="code-example-js">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code-example-js">#</doc-anchor-trigger>
+        <span>Code example JS</span>
+    </h3>
+</doc-anchor-target>
+<p>To create a signed object we can use the Daemon to take in the values of the attestation then sign them, so the object must contain all the information that links the signed object to the user.  So e.g. it can contain</p>
+<ul>
+<li>The users ID</li>
+<li>The users information being attested to</li>
+<li>The attestors information document type, data</li>
+</ul>
+<p>This information will all be put into a MMR and signed.</p>
+<p>So for example this attests a users ID to an attestation ID.  So in words the system will sign the data to be true that the user in the <code v-pre>&quot;myapp.vrsc::attestation.user&quot;</code> key has the attestataion of <code v-pre>&quot;myapp.vrsc::attestation.id&quot;</code> ID.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">yarn add https://github.com/VerusCoin/bitcoind-rpc.git</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">// NOTE: https://github.com/VerusCoin/verusd-rpc-ts-client will replace the bitcoind for signdata TBA.
+// NOTE: create a .env file in the root of the directory with the TESTNET
+require('dotenv').config();
+const RpcClient = require('bitcoind-rpc'); //NOTE: To allow signing of data change the L344: index.js to -&gt; RpcClient.callspec = apisWithWallet;
+const VDXF_Data = require(&quot;verus-typescript-primitives/dist/vdxf/vdxfDataKeys&quot;);
+
+const config = {
+    protocol: 'http',
+    user: process.env.TESTNET_USERNAME, //daemon connection details from /vrsc(test).conf
+    pass: process.env.TESTNET_PASSWORD,
+    host: process.env.TESTNET_URL,
+    port: process.env.TESTNET_PORT,
+  };
+
+const rpc = new RpcClient(config);
+
+const verusdCall = (subcall, req) =&gt; {
+    return new Promise((resolve, reject) =&gt; {
+        let reply = { 
+        error: null, 
+        data: null,
+        success: true 
+        }
+        let payload = req;
+        try {
+            rpc[subcall](...payload, function (err, ret) {
+            if (err) {
+                reply.error = err;
+                reply.success = false;
+                reject(reply); // reject with error
+            } else {
+                reply.data = ret.result;
+                resolve(reply); // resolve with response
+            }
+            });
+        } catch (e){
+            reply.error = e;
+            reply.success = false;
+            reject(reply); // reject with error
+        }
+    });
+};
+
+const attestationData = {
+   &quot;address&quot;:&quot;signingID@&quot;,
+   &quot;createmmr&quot;:true,
+   &quot;mmrdata&quot;:[
+      {
+         &quot;vdxfdata&quot;:{
+            [VDXF_Data.DataDescriptorKey().vdxfid]:{
+               &quot;version&quot;:1,
+               &quot;flags&quot;:0,
+               &quot;label&quot;:&quot;myapp.vrsc::attestation.id&quot;,
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:&quot;0293480924-032943928&quot;
+            }
+         }
+      },
+      {
+         &quot;vdxfdata&quot;:{
+            [VDXF_Data.DataDescriptorKey().vdxfid]:{
+               &quot;version&quot;:1,
+               &quot;flags&quot;:0,
+               &quot;label&quot;:&quot;myapp.vrsc::attestation.user&quot;,
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:&quot;someuser.vrsc@&quot;
+            }
+         }
+      }
+   ]
+}
+
+const reply = verusdCall('signdata', [attestationData])
+    .then((reply) =&gt; {
+        console.log(reply)
+    })
+    .catch((e) =&gt;{
+        console.error(e)
+    });</code></pre>
+</doc-codeblock></div>
+<p>This will return:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">const signedDataReply = {
+  &quot;mmrdescriptor&quot;: {
+    &quot;version&quot;: 1,
+    &quot;objecthashtype&quot;: 5,
+    &quot;mmrhashtype&quot;: 1,
+    &quot;mmrroot&quot;: {
+      &quot;version&quot;: 1,
+      &quot;flags&quot;: 0,
+      &quot;objectdata&quot;: &quot;34140a8b64d520d00d1c576bc605eb337450ba1a1120b06f1b0214f10cbbbb10&quot;
+    },
+    &quot;mmrhashes&quot;: {
+      &quot;version&quot;: 1,
+      &quot;flags&quot;: 0,
+      &quot;objectdata&quot;: &quot;41d826d3c6cbbc3a96992670d2f604e959fd1a8c01410243482a4132bc18af2333d0764b303b686d2eeb6b3f0742e97783ebe2b377e29366946e3d49ed6449d5f867f41ea874996307eec9a152ba41273b2ddc8583e696&quot;
+    },
+    &quot;datadescriptors&quot;: [
+      {
+        &quot;version&quot;: 1,
+        &quot;flags&quot;: 2,
+        &quot;objectdata&quot;: {
+          &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;: {
+            &quot;version&quot;: 1,
+            &quot;flags&quot;: 96,
+            &quot;mimetype&quot;: &quot;text/plain&quot;,
+            &quot;objectdata&quot;: {
+              &quot;message&quot;: &quot;0293480924-032943928&quot;
+            },
+            &quot;label&quot;: &quot;myapp.vrsc::attestation.id&quot;
+          }
+        },
+        &quot;salt&quot;: &quot;7bf53c7bb254304993f4543ffc3114c2450001f825764820e41573b049807cfd&quot;
+      },
+      {
+        &quot;version&quot;: 1,
+        &quot;flags&quot;: 2,
+        &quot;objectdata&quot;: {
+          &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;: {
+            &quot;version&quot;: 1,
+            &quot;flags&quot;: 96,
+            &quot;mimetype&quot;: &quot;text/plain&quot;,
+            &quot;objectdata&quot;: {
+              &quot;message&quot;: &quot;someuser.vrsc@&quot;
+            },
+            &quot;label&quot;: &quot;myapp.vrsc::attestation.user&quot;
+          }
+        },
+        &quot;salt&quot;: &quot;1e802aae639a84156178f4e8440d9c774d5aa7fdf042b305e1af607b6f8e27a7&quot;
+      }
+    ]
+  },
+  &quot;signaturedata&quot;: {
+    &quot;version&quot;: 1,
+    &quot;systemid&quot;: &quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,
+    &quot;hashtype&quot;: 1,
+    &quot;signaturehash&quot;: &quot;10bbbb0cf114021b6fb020111aba507433eb05c66b571c0dd020d5648b0a1434&quot;,
+    &quot;identityid&quot;: &quot;iRmBDWNs2WahXDAvS2TEsJyJwwHXhwcs7w&quot;,
+    &quot;signaturetype&quot;: 1,
+    &quot;signature&quot;: &quot;AgWwYAAAAUEfttjAE8/Q5g5KPaUcxcCukBrJEnfJPfd0pissIU03MjNG/1ZJ4Ww1WqJHODZ2edFzQ6JFzeZ36rRCSpQZHa3tWg==&quot;
+  },
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="storing-the-data-in-an-id">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#storing-the-data-in-an-id">#</doc-anchor-trigger>
+        <span>Storing the data in an ID</span>
+    </h2>
+</doc-anchor-target>
+<p>Get a vdxfid for the main object to be stored in the ID</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">./verus -chain=vrsctest getvdxfid myzoo.vrsc::staff.zookeepers
+{
+  &quot;vdxfid&quot;: &quot;iKNUEu3YBmBPgiR3fRdGg7cTC3mmx8Jqap&quot;,
+  &quot;indexid&quot;: &quot;xQCahhUd35Q4JtJ5X7HReW8zDhnnw1gm9G&quot;,
+  &quot;hash160result&quot;: &quot;ad3d88716bcb54aa55fec90e2a72570c03da5cae&quot;,
+  &quot;qualifiedname&quot;: {
+    &quot;namespace&quot;: &quot;i9TAXTHi3UzYfifTW7BW4YR51T2Z3zEeSp&quot;,
+    &quot;name&quot;: &quot;myzoo.vrsc::staff.zookeepers&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">// As before setup the RPC server then use the reply from the daemon to put that into the contentmap of an ID.
+const VDXF_Data = require(&quot;verus-typescript-primitives/dist/vdxf/vdxfDataKeys&quot;);
+
+const zookeepersVdxfid = &quot;iKNUEu3YBmBPgiR3fRdGg7cTC3mmx8Jqap&quot;;
+
+const updateIdentityObj = {
+    name: &quot;idnameto update&quot;,
+    &quot;contentmultimap&quot;:{
+        [zookeepersVdxfid]: {
+            [VDXF_Data.MMRDescriptorKey().vdxfid] : signedDataReply.mmrdescriptor,
+            [VDXF_Data.SignatureDataKey().vdxfid] : signedDataReply.signaturedata
+        }
+    }
+}
+
+const reply = verusdCall('updateidentity', [updateIdentityObj])
+    .then((reply) =&gt; {
+        console.log(reply)
+    });</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -363,6 +565,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
