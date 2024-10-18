@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782578675638">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782578821002">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Developer Documentation Landing Page</title>
-    <meta name="title" content="Developer Documentation Landing Page">
-    <meta name="description" content="Nice developer documentation starting page..">
+    <title>Creating an Identity on VerusCoin</title>
+    <meta name="title" content="Creating an Identity on VerusCoin">
+    <meta name="description" content="This guide aims to walk you through the process of creating an identity on the VerusCoin blockchain by registering a name commitment and then...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://monkins1010.github.io/verusid/">
@@ -19,22 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://monkins1010.github.io/verusid/">
-    <meta property="og:title" content="Developer Documentation Landing Page">
-    <meta property="og:description" content="Nice developer documentation starting page..">
+    <meta property="og:title" content="Creating an Identity on VerusCoin">
+    <meta property="og:description" content="This guide aims to walk you through the process of creating an identity on the VerusCoin blockchain by registering a name commitment and then...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://monkins1010.github.io/verusid/">
-    <meta property="twitter:title" content="Developer Documentation Landing Page">
-    <meta property="twitter:description" content="Nice developer documentation starting page..">
+    <meta property="twitter:title" content="Creating an Identity on VerusCoin">
+    <meta property="twitter:description" content="This guide aims to walk you through the process of creating an identity on the VerusCoin blockchain by registering a name commitment and then...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.782578675638" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.782578821002" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.782578675638" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.782578821002" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.782578675638" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.782578821002" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.782578821002" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -269,13 +270,333 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="developer-documentation-landing-page" class="break-words">
+<doc-anchor-target id="creating-an-identity-on-veruscoin" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#developer-documentation-landing-page">#</doc-anchor-trigger>
-        <span>Developer Documentation Landing Page</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-an-identity-on-veruscoin">#</doc-anchor-trigger>
+        <span>Creating an Identity on VerusCoin</span>
     </h1>
 </doc-anchor-target>
-<p>Nice developer documentation starting page..</p>
+<doc-anchor-target id="introduction">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction">#</doc-anchor-trigger>
+        <span>Introduction</span>
+    </h2>
+</doc-anchor-target>
+<p>This guide aims to walk you through the process of creating an identity on the VerusCoin blockchain by registering a name commitment and then registering an ID with that commitment. By following these steps, you&#x27;ll secure a unique rent-free identity that can be used within the Verus ecosystem for transactions, authentication, and more.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Verus CLI is installed on your system.</li>
+<li>The VerusCoin testnet is running and fully synchronized.</li>
+<li>You have sufficient funds in your wallet to cover transaction fees and any associated costs (more than 100 VRSCTEST coins).</li>
+</ul>
+<doc-anchor-target id="overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>Creating an identity on VerusCoin involves two main steps:</p>
+<ol>
+<li><strong>Registering a Name Commitment:</strong> This step commits your desired identity name to the blockchain in a way that conceals it until you&#x27;re ready to register, preventing others from front-running or claiming your name.</li>
+<li><strong>Registering an Identity:</strong> Using the name commitment, you register the actual identity, making it publicly available and usable within the Verus ecosystem.</li>
+</ol>
+<doc-anchor-target id="step-1-register-a-name-commitment">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-register-a-name-commitment">#</doc-anchor-trigger>
+        <span>Step 1: Register a Name Commitment</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="what-is-a-name-commitment">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-name-commitment">#</doc-anchor-trigger>
+        <span>What is a Name Commitment?</span>
+    </h3>
+</doc-anchor-target>
+<p>A name commitment is a cryptographic commitment to the identity name you intend to register. It ensures privacy and security by hiding the actual name during the commitment phase, protecting it from being claimed by others before you complete the registration.</p>
+<doc-anchor-target id="command-registernamecommitment">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#command-registernamecommitment">#</doc-anchor-trigger>
+        <span>Command: <code v-pre>registernamecommitment</code></span>
+    </h3>
+</doc-anchor-target>
+<p>The <code v-pre>registernamecommitment</code> command creates a namecommitment transaction for your desired identity name.</p>
+<doc-anchor-target id="syntax">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#syntax">#</doc-anchor-trigger>
+        <span>Syntax</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest registernamecommitment &quot;name&quot; &quot;controladdress&quot; (&quot;referralidentity&quot;) (&quot;parentnameorid&quot;) (&quot;sourceoffunds&quot;)</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>&lt;name&gt;</code>: The unique name to commit to. creating a name commitment is not a registration, and if one is created for a name that exists, it may succeed, but will never be able to be used</li>
+<li><code v-pre>&lt;controladdress</code>: address that will control this commitment. IMPORTANT: this is not necessarily the address that should control the actual ID, and it should be present in the current wallet that is registering the ID. Change may go to this address.</li>
+<li><code v-pre>&lt;referralidentity&gt;</code>: (optional) friendly name or identity address that is provided as a referral mechanism and to lower network cost of the ID.</li>
+<li><code v-pre>&lt;parentnameorid&gt;</code>: (optional) friendly name or currency i-address, which will be the parent of this ID and dictate issuance rules &amp; pricing.</li>
+<li><code v-pre>&lt;sourceoffunds&gt;</code>: (optional) optional address to use for source of funds. if not specified, transparent wildcard &quot;*&quot; is used.</li>
+</ul>
+<doc-anchor-target id="example">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<p>Suppose you want to register the identity name <code v-pre>tutorial</code>. Execute the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest registernamecommitment &quot;tutorial&quot; &quot;RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N&quot; &quot;&quot; &quot;vrsctest&quot; &quot;*&quot;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>&quot;tutorial&quot;</code>: The desired identity name.</li>
+<li><code v-pre>&quot;RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N&quot;</code>: the controladdress of that namecommitment. You can create an address using the <code v-pre>getnewaddress</code> command.</li>
+<li><code v-pre>&quot;&quot;</code>: There is no referral used.</li>
+<li><code v-pre>vrsctest</code>: We create an identity using the root currency of the testnet. The result will be the identity &#x27;<strong>tutorial.vrsctest@</strong>&#x27; or &#x27;<strong>tutorial@</strong>&#x27; since its a root id.</li>
+</ul>
+<doc-anchor-target id="result">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#result">#</doc-anchor-trigger>
+        <span>Result</span>
+    </h5>
+</doc-anchor-target>
+<p>Be sure to save the result, as it will be essential to do the next step when finally register the identity. When you for some reason lose that information and the name is still available you have to register another name commitment.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;txid&quot;: &quot;38c46f83021ccf3155029a94d97d692619186a34cc111f832caf542c469fe3b2&quot;,
+  &quot;namereservation&quot;: {
+    &quot;version&quot;: 1,
+    &quot;name&quot;: &quot;tutorial&quot;,
+    &quot;parent&quot;: &quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,
+    &quot;salt&quot;: &quot;bf6a7b01e9329c86d6058fde9bf1788febfa31125dfd94ef294017eedfee4f19&quot;,
+    &quot;referral&quot;: &quot;&quot;,
+    &quot;nameid&quot;: &quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="notes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notes">#</doc-anchor-trigger>
+        <span>Notes</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Transaction Submission:</strong> The command will create a transaction with a namecommitment and sends it to the network.</li>
+<li><strong>Confirmation:</strong> Wait for the transaction to be included in a block (usually after one confirmation) before proceeding to the next step.</li>
+<li><strong>Fees:</strong> The fees for that transaction will be 0.0001 VRSCTEST Coins.</li>
+</ul>
+<p>You can check the confirmations via the command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">verus -chain=vrsctest getrawtransaction &quot;38c46f83021ccf3155029a94d97d692619186a34cc111f832caf542c469fe3b2&quot; 1 | jq '.confirmations'</code></pre>
+</doc-codeblock></div>
+<p>When the number of confirmations is <code v-pre>1 or higher</code> you can proceed. When the command returns <code v-pre>null</code>. The transaction is not confirmed yet and you have to wait a bit more. The Blocktime on the testnet is supposed to be one minute. Be aware that it sometimes can take a bit longer in the testnet.</p>
+<doc-anchor-target id="step-2-register-the-identity">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-register-the-identity">#</doc-anchor-trigger>
+        <span>Step 2: Register the Identity</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="command-registeridentity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#command-registeridentity">#</doc-anchor-trigger>
+        <span>Command: <code v-pre>registeridentity</code></span>
+    </h3>
+</doc-anchor-target>
+<p>After your name commitment is confirmed on the blockchain, you can register the identity using the <code v-pre>registeridentity</code> command.</p>
+<doc-anchor-target id="syntax-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#syntax-1">#</doc-anchor-trigger>
+        <span>Syntax</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest registeridentity &quot;jsonidregistration&quot; (returntx) feeoffer sourceoffunds</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>&lt;jsonidregistration&gt;</code>: An json object that defines the identity registration.</li>
+<li><code v-pre>&lt;primaryaddresses&gt;</code>: An array of addresses associated with the identity.</li>
+<li><code v-pre>&lt;minimumsignatures&gt;</code>: The minimum number of signatures required for identity actions (useful for multi-signature setups).</li>
+<li><code v-pre>&lt;funding_source&gt;</code>: (Optional) The address or alias to fund the transaction.</li>
+</ul>
+<doc-anchor-target id="example-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<p>For our example with the previous registered namecommitment the object can look like the following.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest registeridentity '{&quot;txid&quot;:&quot;38c46f83021ccf3155029a94d97d692619186a34cc111f832caf542c469fe3b2&quot;,&quot;namereservation&quot;:{&quot;version&quot;:1,&quot;name&quot;:&quot;tutorial&quot;,&quot;parent&quot;:&quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,&quot;salt&quot;:&quot;bf6a7b01e9329c86d6058fde9bf1788febfa31125dfd94ef294017eedfee4f19&quot;,&quot;referral&quot;:&quot;&quot;,&quot;nameid&quot;:&quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;},&quot;identity&quot;:{&quot;name&quot;:&quot;tutorial.vrsctest&quot;,&quot;primaryaddresses&quot;:[&quot;RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N&quot;],&quot;minimumsignatures&quot;:1,&quot;revocationauthority&quot;:[&quot;&quot;],&quot;recoveryauthority&quot;:[&quot;&quot;]}}'</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>&lt;jsonidregistration&gt;</code>:</li>
+</ul>
+<p>this is the json object which was minified as string. Take a closer look here. Some values should be already familiar for you. <code v-pre>txid</code> and the <code v-pre>namereservation</code> object contains values from the response of the registernamecommitment command. The <code v-pre>identity</code> object contains information like the primaryaddresses, revocation and recoveryauthority which you can adjust to your needs. When you dont put a recovation and recovery authority your primaryaddress <code v-pre>RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N</code> will be used by default both authorities.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;txid&quot;: &quot;38c46f83021ccf3155029a94d97d692619186a34cc111f832caf542c469fe3b2&quot;,
+  &quot;namereservation&quot;: {
+    &quot;version&quot;: 1,
+    &quot;name&quot;: &quot;tutorial&quot;,
+    &quot;parent&quot;: &quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,
+    &quot;salt&quot;: &quot;bf6a7b01e9329c86d6058fde9bf1788febfa31125dfd94ef294017eedfee4f19&quot;,
+    &quot;referral&quot;: &quot;&quot;,
+    &quot;nameid&quot;: &quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;
+  },
+    &quot;identity&quot;:{
+        &quot;name&quot;:&quot;tutorial.vrsctest&quot;,
+        &quot;primaryaddresses&quot;:[&quot;RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N&quot;],
+        &quot;minimumsignatures&quot;:1,
+        &quot;revocationauthority&quot;:[&quot;&quot;],
+        &quot;recoveryauthority&quot;:[&quot;&quot;]}
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="result-1">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#result-1">#</doc-anchor-trigger>
+        <span>Result</span>
+    </h5>
+</doc-anchor-target>
+<p>The result of this command will generate a transaction ID.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">54b091317a0ab4c50731f3762ff73af1c3dca11ede2d0ae9527cc6f84f4d0f1a</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="notes-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notes-1">#</doc-anchor-trigger>
+        <span>Notes</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Skipped Arguments:</strong>
+for simplicity reasons we skipped <code v-pre>returntx</code>, <code v-pre>feeoffer</code> and <code v-pre>sourceoffunds</code></li>
+<li><strong>Matching Values:</strong> Ensure the name and other values matches the values used in the name commitment.</li>
+<li><strong>Transaction Fees:</strong> The registration will require a fee, deducted from your wallet. On the VRSCTEST a root identity cost 100 VRSCTEST. You can reduce the price to 80 VRSCTEST by using a referral identity. On top of that comes a transactionfee of 0.0001 VRSCTEST</li>
+<li><strong>Confirmation:</strong> Wait for the identity registration transaction to be confirmed on the blockchain.</li>
+</ul>
+<p>As in the previous step you can also check the confirmations via the command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">verus -chain=vrsctest getrawtransaction &quot;54b091317a0ab4c50731f3762ff73af1c3dca11ede2d0ae9527cc6f84f4d0f1a
+&quot; 1 | jq '.confirmations'</code></pre>
+</doc-codeblock></div>
+<p>When the number of confirmations is <code v-pre>1 or higher</code> your identity should be registered. And you can verify your registration.</p>
+<doc-anchor-target id="step-3-verify-your-identity-registration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-verify-your-identity-registration">#</doc-anchor-trigger>
+        <span>Step 3: Verify Your Identity Registration</span>
+    </h2>
+</doc-anchor-target>
+<p>To confirm that your identity has been successfully registered, use the <code v-pre>getidentity</code> command.</p>
+<doc-anchor-target id="command-getidentity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#command-getidentity">#</doc-anchor-trigger>
+        <span>Command: <code v-pre>getidentity</code></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="syntax-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#syntax-2">#</doc-anchor-trigger>
+        <span>Syntax</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest getidentity &quot;&lt;name&gt;&quot;</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>&lt;name&gt;</code>: name followed by &quot;@&quot; or i-address of an identity</li>
+</ul>
+<doc-anchor-target id="example-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">verus -chain=vrsctest getidentity &quot;tutorial@&quot;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="expected-output">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#expected-output">#</doc-anchor-trigger>
+        <span>Expected Output</span>
+    </h4>
+</doc-anchor-target>
+<p>You should receive detailed information about your identity, such as:</p>
+<ul>
+<li>Identity name</li>
+<li>Primary addresses</li>
+<li>Identity ID</li>
+<li>Registration block height</li>
+<li>Other associated data</li>
+</ul>
+<p>eg.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{
+  &quot;friendlyname&quot;: &quot;tutorial.VRSCTEST@&quot;,
+  &quot;fullyqualifiedname&quot;: &quot;tutorial.VRSCTEST@&quot;,
+  &quot;identity&quot;: {
+    &quot;version&quot;: 3,
+    &quot;flags&quot;: 0,
+    &quot;primaryaddresses&quot;: [
+      &quot;RVdPfjLiWRbD7v63Ybhq2AL9FRSgyKsK9N&quot;
+    ],
+    &quot;minimumsignatures&quot;: 1,
+    &quot;name&quot;: &quot;tutorial&quot;,
+    &quot;identityaddress&quot;: &quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;,
+    &quot;parent&quot;: &quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,
+    &quot;systemid&quot;: &quot;iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq&quot;,
+    &quot;contentmap&quot;: {
+    },
+    &quot;contentmultimap&quot;: {
+    },
+    &quot;revocationauthority&quot;: &quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;,
+    &quot;recoveryauthority&quot;: &quot;i9VVAnGieMr7uK1AgkJfiZEXLskbkRRmeZ&quot;,
+    &quot;timelock&quot;: 0
+  },
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;canspendfor&quot;: true,
+  &quot;cansignfor&quot;: true,
+  &quot;blockheight&quot;: 255187,
+  &quot;txid&quot;: &quot;54b091317a0ab4c50731f3762ff73af1c3dca11ede2d0ae9527cc6f84f4d0f1a&quot;,
+  &quot;vout&quot;: 0
+}</code></pre>
+</doc-codeblock></div>
+<p>After registering the identity, some output should appear. To really make sure you own the identity you should take a closer look to the values <code v-pre>canspendfor</code> or <code v-pre>cansignfor</code>. Both values should be <code v-pre>true</code>.</p>
+<doc-anchor-target id="conclusion">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
+        <span>Conclusion</span>
+    </h2>
+</doc-anchor-target>
+<p>Congratulations! You have successfully created an identity on the VerusCoin blockchain by registering a name commitment and then registering the identity. Your new identity is now part of the Verus ecosystem and can be used for various purposes, including secure transactions and decentralized applications.</p>
+<doc-anchor-target id="additional-tips">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-tips">#</doc-anchor-trigger>
+        <span>Additional Tips</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Multi-Signature Identities:</strong> If you require enhanced security, consider setting up a multi-signature identity by specifying multiple <code v-pre>primaryaddresses</code> and adjusting the <code v-pre>minimumsignatures</code> parameter accordingly.</p>
+</li>
+<li><p><strong>Store Data:</strong> You can store data in an identity by using the <code v-pre>contentmap</code> or <code v-pre>contentmultimap</code></p>
+</li>
+<li><p><strong>Updating Identities:</strong> You can update your identity&#x27;s information (e.g., primary addresses) using the <code v-pre>updateidentity</code> command.</p>
+</li>
+</ul>
+<doc-anchor-target id="references">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#references">#</doc-anchor-trigger>
+        <span>References</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Official VerusCoin Documentation:</strong> Visit the <a href="https://github.com/VerusCoin/VerusCoin">VerusCoin GitHub</a> for the latest documentation and updates.</li>
+<li><strong>Community Support:</strong> Join the VerusCoin community forums or Discord channels for assistance from other users and developers.</li>
+</ul>
+<doc-anchor-target id="disclaimer">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disclaimer">#</doc-anchor-trigger>
+        <span>Disclaimer</span>
+    </h2>
+</doc-anchor-target>
+<p>This guide is based on the VerusCoin protocol as of October 2024. Features and commands may change in future versions.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -348,6 +669,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "VerusID", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "VerusID", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
