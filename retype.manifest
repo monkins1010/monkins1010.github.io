@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2024-10-18T15:00:22Z",
+  "created": "2024-11-02T10:59:49Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -210,6 +210,9 @@
       "path": "index.html"
     },
     {
+      "path": "liquailtyvrsc.png"
+    },
+    {
       "path": "resources\\css\\retype.css"
     },
     {
@@ -344,6 +347,12 @@
     },
     {
       "path": "verusvdxf\\index.html"
+    },
+    {
+      "path": "vexchange\\getting-started\\index.html"
+    },
+    {
+      "path": "vexchange\\index.html"
     }
   ]
 }
