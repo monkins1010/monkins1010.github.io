@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2024-11-02T10:59:49Z",
+  "created": "2024-11-04T21:42:58Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -311,6 +311,9 @@
     },
     {
       "path": "veruslogin\\index.html"
+    },
+    {
+      "path": "veruslogin\\login-template\\index.html"
     },
     {
       "path": "veruslogin\\process-login\\index.html"
