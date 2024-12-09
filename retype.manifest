@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2024-11-04T21:42:58Z",
+  "created": "2024-12-09T17:28:14Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -77,6 +77,12 @@
     },
     {
       "path": "discord-icon.svg"
+    },
+    {
+      "path": "discordchat\\getting-started\\index.html"
+    },
+    {
+      "path": "discordchat\\index.html"
     },
     {
       "path": "docs\\404.html",
@@ -272,6 +278,9 @@
       "old": true
     },
     {
+      "path": "tags\\docker\\index.html"
+    },
+    {
       "path": "tags\\frontend\\index.html",
       "old": true
     },
@@ -284,6 +293,9 @@
     {
       "path": "tags\\svelte\\index.html",
       "old": true
+    },
+    {
+      "path": "tags\\testnet\\index.html"
     },
     {
       "path": "tags\\vdxf\\index.html"
