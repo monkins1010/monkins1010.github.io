@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787080492751">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792883922778">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Getting Started</title>
-    <meta name="title" content="Getting Started">
-    <meta name="description" content="Fancy getting started guide...">
+    <title>Storing Data in a ID</title>
+    <meta name="title" content="Storing Data in a ID">
+    <meta name="description" content="Verus ID's have the ability to hold upto ~ 4kb data in a special area called the contentmap. This is a map where data is stored like this:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://monkins1010.github.io/verusstorage/getting-started/">
@@ -19,22 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://monkins1010.github.io/verusstorage/getting-started/">
-    <meta property="og:title" content="Getting Started">
-    <meta property="og:description" content="Fancy getting started guide...">
+    <meta property="og:title" content="Storing Data in a ID">
+    <meta property="og:description" content="Verus ID's have the ability to hold upto ~ 4kb data in a special area called the contentmap. This is a map where data is stored like this:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://monkins1010.github.io/verusstorage/getting-started/">
-    <meta property="twitter:title" content="Getting Started">
-    <meta property="twitter:description" content="Fancy getting started guide...">
+    <meta property="twitter:title" content="Storing Data in a ID">
+    <meta property="twitter:description" content="Verus ID's have the ability to hold upto ~ 4kb data in a special area called the contentmap. This is a map where data is stored like this:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.787080492751" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792883922778" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.787080492751" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792883922778" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.787080492751" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792883922778" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.792883922778" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -269,10 +270,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="getting-started" class="break-words">
+<doc-anchor-target id="storing-data-in-a-id" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
-        <span>Getting Started</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#storing-data-in-a-id">#</doc-anchor-trigger>
+        <span>Storing Data in a ID</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -280,7 +281,150 @@
     <div><a href="../../categories/tutorials/">Tutorials</a></div>
 </div>
 
-<p>Fancy getting started guide...</p>
+<p>Verus ID&#x27;s have the ability to hold upto ~4kb data in a special area called the <code v-pre>contentmap</code>.  This is a map where data is stored like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;vdxfid&quot;:  data,
+    &quot;vdxfid&quot;:  data
+}</code></pre>
+</doc-codeblock></div>
+<p>If for example you made a vdxfid key which meant something to you e.g. myId.vrsc::shop.  This namespace can be turned into a vdxfid or 20byte hash of the namespace turned into an vdxfid.</p>
+<doc-anchor-target id="creating-a-vdxfid">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-a-vdxfid">#</doc-anchor-trigger>
+        <span>Creating a vdxfid</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">
+./verus getvdxfif &quot;myId.vrsc::shop&quot;
+
+#returns
+
+{
+  &quot;vdxfid&quot;: &quot;iMvTg2HGhKKGYMqtapvRyfZNahbzmD9R3b&quot;,
+  &quot;indexid&quot;: &quot;xSka8piMYdXwAXivSWaax45ucMd1dbMnRJ&quot;,
+  &quot;hash160result&quot;: &quot;5756341688b6cd130ec192042cdf2957d8f059ca&quot;,
+  &quot;qualifiedname&quot;: {
+    &quot;namespace&quot;: &quot;i6bVzhjEdMY4DgyLE2XHGKHfpm4FaGPfiL&quot;,
+    &quot;name&quot;: &quot;myId.vrsc::shop&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<p>So the vdxfid would be <code v-pre>iMvTg2HGhKKGYMqtapvRyfZNahbzmD9R3b</code>.</p>
+<p>The name <code v-pre>myId.vrsc::shop</code> is made up of  <code v-pre>youridyouown</code> <code v-pre>.vrsc::</code> <code v-pre>keyA.KeyB.KeyC</code> and so on.  So some examples for a shop would be</p>
+<p><code v-pre>myId.vrsc::shop.type</code>
+<code v-pre>myId.vrsc::shop.address</code>
+<code v-pre>myId.vrsc::shop.value</code></p>
+<doc-anchor-target id="putting-it-together">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#putting-it-together">#</doc-anchor-trigger>
+        <span>Putting it together</span>
+    </h3>
+</doc-anchor-target>
+<p>When looking at the datain an ID it might only hold one piece of information e.g. a name. Or it may hold 1000&#x27;s of updates of data, so it is important to make sure the data is indexed so it can be filtered and avoid large lists of data returned.</p>
+<p>You can define keys for your <code v-pre>shop</code> project and them use them and search for them by a master key e.g.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">
+{ &quot;iMvTg2HGhKKGYMqtapvRyfZNahbzmD9R3b&quot;: [{  // myId.vrsc::shop
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{ // this is a dataDescriptor key
+               &quot;label&quot;:&quot;i3esdByX2PKx5vJiuNrRb61KAKqsBEMxac&quot;, // myId.vrsc::shop.type
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;Bookshop&quot;
+               }
+            }
+        },
+        {
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+               &quot;label&quot;:&quot;i7Wgy2oRrJdjxhcRxpmzb9zCKWMbA5UZqw&quot;, // myId.vrsc::shop.address
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;15 Sea View, Miami, 132523&quot;
+               }
+            }
+        },
+        {
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+               &quot;label&quot;:&quot;i8bsRok21QeUrnxP97JkdaoYzyBj4HdSix&quot;, // myId.vrsc::shop.value
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;$100,000&quot;
+               }
+            }
+        }]
+}</code></pre>
+</doc-codeblock></div>
+<p>The <code v-pre>i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv</code> or <code v-pre>DataDEscriptor</code> vdxfid is an object that can have may types of data</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{&quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+        &quot;label&quot;:&quot;i8bsRok21QeUrnxP97JkdaoYzyBj4HdSix&quot;, // string limited to 64 utf-8 bytes
+        &quot;mimetype&quot;:&quot;text/plain&quot;,  // string of mime limited to 128 bytes
+        &quot;objectdata&quot;:{      
+            &quot;message&quot;:&quot;string&quot;  //limited to about 2000 bytes
+        },
+        &quot;salt&quot;: &quot;string of hex data normally 32 bytes&quot;, // encryption public key, data only present if encrypted or data referenced by unencrypted link is encrypted
+        &quot;epk&quot;: &quot;string&quot;,     // encryption public key, data only present if encrypted or data referenced by unencrypted link is encrypted
+        &quot;ivk&quot;: &quot;string&quot;,  // incoming viewing key, optional and contains data only if full viewing key is published at this encryption level
+        &quot;ssk&quot;: &quot;string&quot;     // specific symmetric key, optional and only to decrypt this linked sub-object
+    }
+}]</code></pre>
+</doc-codeblock></div>
+<p>In this example we are using unencryted data into the contentmultimap, but in more advance topics see <code v-pre>chain storage data</code> this allows alarge  files and is encrypted by default, the salt, epk, ivk and ssk cvalues are calulated for you if you need them.</p>
+<doc-anchor-target id="updating-the-id">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-the-id">#</doc-anchor-trigger>
+        <span>Updating the ID</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">./verus updateidentity '{&quot;name&quot;:&quot;yourid&quot;, &quot;contentmultimap&quot;:{ &quot;iMvTg2HGhKKGYMqtapvRyfZNahbzmD9R3b&quot;: [{
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+                &quot;version&quot;: 1,
+               &quot;label&quot;:&quot;i3esdByX2PKx5vJiuNrRb61KAKqsBEMxac&quot;,
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;Bookshop&quot;
+               }
+            }
+        },
+        {
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+                &quot;version&quot;: 1,
+               &quot;label&quot;:&quot;i7Wgy2oRrJdjxhcRxpmzb9zCKWMbA5UZqw&quot;,
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;15 Sea View, Miami, 132523&quot;
+               }
+            }
+        },
+        {
+        &quot;i4GC1YGEVD21afWudGoFJVdnfjJ5XWnCQv&quot;:{
+               &quot;version&quot;: 1,
+               &quot;label&quot;:&quot;i8bsRok21QeUrnxP97JkdaoYzyBj4HdSix&quot;,
+               &quot;mimetype&quot;:&quot;text/plain&quot;,
+               &quot;objectdata&quot;:{
+                  &quot;message&quot;:&quot;$100,000&quot;
+               }
+            }
+        }]
+}}'</code></pre>
+</doc-codeblock></div>
+<p>Retrieving the data uses the function <code v-pre>./verus getidentitycontent  &quot;name@ || iid&quot; (heightstart) (heightend) (txproofs) (txproofheight) (vdxfkey) (keepdeleted)</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;name@ || iid&quot;                       (string, required) name followed by \&quot;@\&quot; or i-address of an identity\n&quot;
+&quot;heightstart&quot;                        (number, optional) default=0, only return content from this height forward, inclusive\n&quot;
+&quot;heightend&quot;                          (number, optional) default=0 which means max height, only return content up to this height,\n&quot;
+                                                             inclusive. -1 means also return values from the mempool.\n&quot;
+&quot;txproofs&quot;                           (bool, optional) default=false, if true, returns proof of ID\n&quot;
+&quot;txproofheight&quot;                      (number, optional) default=\&quot;height\&quot;, height from which to generate a proof\n&quot;
+&quot;vdxfkey&quot;                            (vdxf key, optional) default=null, more selective search for specific content in ID\n&quot;
+&quot;keepdeleted&quot;                        (bool, optional) default=false, if true, return deleted items as well\n&quot;</code></pre>
+</doc-codeblock></div>
+<p>So to get our example we can do</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">./verus getidentitycontent &quot;name@&quot;</code></pre>
+</doc-codeblock></div>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -334,7 +478,7 @@
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
@@ -363,6 +507,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Getting Started", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Identity Storage", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
