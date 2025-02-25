@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2025-02-14T21:32:04Z",
+  "created": "2025-02-25T19:40:26Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -347,6 +347,9 @@
     },
     {
       "path": "verusstorage\\index.html"
+    },
+    {
+      "path": "verusstorage\\storing-files\\index.html"
     },
     {
       "path": "verustestnet\\getting-started\\index.html"
