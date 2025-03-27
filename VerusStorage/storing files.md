@@ -8,7 +8,7 @@ tags:
 ---
 # Storing a File on chain
 
-!!!danger Please make sure you start your daemon with `-enablefileencryption=true` in the `VRSCTEST.conf`
+!!!danger Please make sure you start your daemon with `-enablefileencryption` in the `VRSCTEST.conf`
 !!!
 
 To store data on chain it is by default stored encrypted so to encrypt it on chain you need a Z address.  To store a PDF you can do the following.
