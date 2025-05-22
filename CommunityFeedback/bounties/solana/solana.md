@@ -63,7 +63,15 @@ graph LR
 
 #### People Attempting Bounty
 
-@.........
+- @Monkins - provided information for developers to be able to understand what is involved with the bounty.
+- @Monkins - provided an initial concept on how a sub chain can be kept in a solana smart contract in order to provide a stateroot Verus needs.
+
+#### Monkins Idea
+
+![](/assets/sol1.png)
+![](/assets/sol2.png)
+
+This Idea has been discussed with the Lead developer of Verus and would serve as the basis for a viable solution.
 
 #### Milestones
 MVP 1

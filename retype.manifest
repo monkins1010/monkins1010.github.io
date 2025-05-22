@@ -1,12 +1,18 @@
 {
   "version": "3.6.0",
-  "created": "2025-02-25T19:40:26Z",
+  "created": "2025-05-22T07:54:50Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "assets\\sol1.png"
+    },
+    {
+      "path": "assets\\sol2.png"
     },
     {
       "path": "attestations\\getting-started\\index.html"
