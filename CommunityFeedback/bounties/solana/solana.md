@@ -20,7 +20,7 @@ categories:
     - [ ] 1.5 Solana utility functions for Notarizers
 - [ ] 2. Solana Smart Contracts
 - [ ] 3. Daemon modification to accept Solana Proofs
-- [ ] 4. Website so interact with Smart contract
+- [ ] 4. Website to interact with Smart contract
 - [ ] 5. Mobile app to interact with Solana and Verus 
 ```mermaid
 %%{init: { 'theme': 'forest' }}%%
