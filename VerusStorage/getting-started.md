@@ -23,7 +23,7 @@ If for example you made a vdxfid key which meant something to you e.g. myId.vrsc
 
 ```bash
 
-./verus getvdxfif "myId.vrsc::shop"
+./verus getvdxfid "myId.vrsc::shop"
 
 #returns
 
