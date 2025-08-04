@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Verus to ERC20 Mapping Tool</title>
   <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
-  <script src="https://unpkg.com/bs58@5.0.0/index.js"></script>
+  <script src="Base58.js" charset="utf-8"></script>
 </head>
 <body>
   <h1>Verus to ERC20 Mapping Lookup</h1>
@@ -21,7 +21,7 @@
       resultEl.textContent = "Processing...";
 
       try {
-        const decoded = bs58.decode(input);
+        const decoded = Base58.decode(input);
         const sliced = decoded.slice(1, 21); // take bytes 1..20
         const ethAddress = "0x" + Array.from(sliced).map(b => b.toString(16).padStart(2, '0')).join('');
         const checksummed = ethers.getAddress(ethAddress);
@@ -40,7 +40,15 @@
         if (!result || !result[0] || result[0] === "0x0000000000000000000000000000000000000000") {
           resultEl.textContent = "address not mapped";
         } else {
-          resultEl.textContent = JSON.stringify(result, null, 2);
+          // Format the result with proper key names
+          const formattedResult = {
+            erc20ContractAddress: result[0],
+            flags: result[1].toString(),
+            tokenIndex: result[2].toString(),
+            name: result[3],
+            tokenID: result[4].toString()
+          };
+          resultEl.textContent = JSON.stringify(formattedResult, null, 2);
         }
       } catch (e) {
         resultEl.textContent = "Error: " + e.message;
