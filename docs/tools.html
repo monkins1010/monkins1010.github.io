@@ -21,7 +21,7 @@
       resultEl.textContent = "Processing...";
 
       try {
-        const decoded = bs58.decode(input);
+        const decoded = window.bs58.decode(input);
         const sliced = decoded.slice(1, 21); // take bytes 1..20
         const ethAddress = "0x" + Array.from(sliced).map(b => b.toString(16).padStart(2, '0')).join('');
         const checksummed = ethers.getAddress(ethAddress);
