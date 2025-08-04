@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Verus to ERC20 Mapping Tool</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bs58@5.0.0/index.min.js"></script>
+</head>
+<body>
+  <h1>Verus to ERC20 Mapping Lookup</h1>
+
+  <input type="text" id="base58Input" placeholder="Enter Base58 Verus Address" style="width: 400px;">
+  <button onclick="lookup()">Lookup</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function lookup() {
+      const input = document.getElementById("base58Input").value.trim();
+      const resultEl = document.getElementById("result");
+      resultEl.textContent = "Processing...";
+
+      try {
+        const decoded = bs58.decode(input);
+        const sliced = decoded.slice(1, 21); // take bytes 1..20
+        const ethAddress = "0x" + Array.from(sliced).map(b => b.toString(16).padStart(2, '0')).join('');
+        const checksummed = ethers.getAddress(ethAddress);
+
+        const contractAddress = "0x71518580f36FeCEFfE0721F06bA4703218cD7F63";
+        const abi = [
+          "function verusToERC20mapping(address) view returns (address erc20ContractAddress, uint8 flags, uint tokenIndex, string name, uint256 tokenID)"
+        ];
+
+        const provider = new ethers.JsonRpcProvider("https://mainnet.infura.io/v3/6e67197573904e1486999a75454b69da");
+        const contract = new ethers.Contract(contractAddress, abi, provider);
+
+        const result = await contract.verusToERC20mapping(checksummed);
+        resultEl.textContent = JSON.stringify(result, null, 2);
+      } catch (e) {
+        resultEl.textContent = "Error: " + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
