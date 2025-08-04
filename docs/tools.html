@@ -5,19 +5,204 @@
   <title>Verus to ERC20 Mapping Tool</title>
   <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
   <script src="Base58.js" charset="utf-8"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #1d1d1f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .input-container {
+      margin-bottom: 30px;
+    }
+    
+    .input-label {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    
+    .input-group {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    #base58Input {
+      flex: 1;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      border: 2px solid #e5e5e7;
+      border-radius: 12px;
+      color: #1d1d1f;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    
+    #base58Input:focus {
+      border-color: #007aff;
+      box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+    }
+    
+    #base58Input.error {
+      border-color: #ff3b30;
+      box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.1);
+    }
+    
+    button {
+      padding: 16px 32px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+      white-space: nowrap;
+    }
+    
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+    }
+    
+    #result {
+      background: #f8f9fa;
+      border: 2px solid #e5e5e7;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+      font-size: 14px;
+      color: #1d1d1f;
+      white-space: pre-wrap;
+      width: 100%;
+      min-height: 240px;
+      line-height: 1.6;
+      overflow-x: auto;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-sizing: border-box;
+    }
+    
+    .error-message {
+      color: #ff3b30;
+      font-size: 14px;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .input-group {
+        flex-direction: column;
+      }
+      
+      button {
+        width: 100%;
+      }
+      
+      .container {
+        padding: 24px;
+        margin: 0 12px;
+      }
+      
+      h1 {
+        font-size: 2.2em;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Verus to ERC20 Mapping Lookup</h1>
 
-  <input type="text" id="base58Input" placeholder="Enter Base58 Verus Address" style="width: 400px;">
-  <button onclick="lookup()">Lookup</button>
+  <div class="container">
+    <div class="input-container">
+      <label class="input-label" for="base58Input">Put your i-addresses here</label>
+      <div class="input-group">
+        <input type="text" id="base58Input" placeholder="Enter Base58 Verus Address (i...)">
+        <button onclick="lookup()">Lookup</button>
+      </div>
+      <div id="errorMessage" class="error-message"></div>
+    </div>
 
-  <pre id="result"></pre>
+    <pre id="result"></pre>
+  </div>
 
   <script>
+    function validateInput(input) {
+      const errorEl = document.getElementById("errorMessage");
+      const inputEl = document.getElementById("base58Input");
+      
+      // Check if input starts with 'i' and is 33 or 34 characters long
+      if (!input.startsWith('i')) {
+        errorEl.textContent = "Address must start with 'i'";
+        inputEl.classList.add("error");
+        return false;
+      }
+      
+      if (input.length !== 33 && input.length !== 34) {
+        errorEl.textContent = "Address must be 33 or 34 characters long";
+        inputEl.classList.add("error");
+        return false;
+      }
+      
+      // Clear error if validation passes
+      errorEl.textContent = "";
+      inputEl.classList.remove("error");
+      return true;
+    }
+
     async function lookup() {
       const input = document.getElementById("base58Input").value.trim();
       const resultEl = document.getElementById("result");
+      
+      // Validate input first
+      if (!validateInput(input)) {
+        return;
+      }
+      
       resultEl.textContent = "Processing...";
 
       try {
@@ -36,15 +221,19 @@
 
         const result = await contract.verusToERC20mapping(checksummed);
         
+        // Get ETH balance of the contract
+        const ethBalance = await provider.getBalance(contractAddress);
+        const ethBalanceInEth = ethers.formatEther(ethBalance);
+        
         // Check if result is empty or indicates no mapping
-        if (!result || !result[0] || result[0] === "0x0000000000000000000000000000000000000000") {
+        if (!result || !result[0]) {
           resultEl.textContent = "address not mapped";
         } else {
           // Format the result with proper key names
           const formattedResult = {
-            erc20ContractAddress: result[0],
+            erc20ContractAddress: result[0] == "0x0000000000000000000000000000000000000000" ? "Not Mapped" : result[0],
             flags: result[1].toString(),
-            tokenIndex: result[2].toString(),
+            AmountHeld: result[3] === "vETH" ? ethBalanceInEth + " ETH" : (Number(result[2]) / 100000000).toString(),
             name: result[3],
             tokenID: result[4].toString()
           };
