@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817290048996">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817290475725">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.817290048996" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.817290475725" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817290048996" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.817290475725" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817290048996" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.817290048996" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.817290475725" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.817290475725" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -283,7 +283,8 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-typescript"><code v-pre class="language-typescript">import { VerusdRpcInterface } from 'verusd-rpc-ts-client';
+<pre translate="no" class="language-typescript"><code v-pre class="language-typescript">import { VerusIdInterface } from 'verusid-ts-client';
+
 // this is the url to your daemon e.g.  http://127.0.0.1:27486  note: make sure that your VRSC.conf has:
 // rpcallowip=127.0.0.1
 // rpchost=127.0.0.1
@@ -299,7 +300,7 @@ const mainConfig = {
 };
 
 // &quot;i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV&quot; is the system i.e. the VRSC iaddress
-const privateVerusRPC = new VerusdRpcInterface(&quot;i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV&quot;, baseURL, mainConfig);
+const privateVerusRPC = new VerusIdInterface(&quot;i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV&quot;, baseURL, mainConfig);
 
 import { LoginConsentChallenge, primitives, I_ADDR_VERSION } from 'verus-typescript-primitives';
 const { randomBytes } = require('crypto');

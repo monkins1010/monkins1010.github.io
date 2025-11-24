@@ -9,7 +9,8 @@ tags:
 
 
 ```typescript
-import { VerusdRpcInterface } from 'verusd-rpc-ts-client';
+import { VerusIdInterface } from 'verusid-ts-client';
+
 // this is the url to your daemon e.g.  http://127.0.0.1:27486  note: make sure that your VRSC.conf has:
 // rpcallowip=127.0.0.1
 // rpchost=127.0.0.1
@@ -25,7 +26,7 @@ const mainConfig = {
 };
 
 // "i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV" is the system i.e. the VRSC iaddress
-const privateVerusRPC = new VerusdRpcInterface("i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV", baseURL, mainConfig);
+const privateVerusRPC = new VerusIdInterface("i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV", baseURL, mainConfig);
 
 import { LoginConsentChallenge, primitives, I_ADDR_VERSION } from 'verus-typescript-primitives';
 const { randomBytes } = require('crypto');
